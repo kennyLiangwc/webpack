@@ -6,11 +6,9 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
 
-// console.log('HtmlWebpackPlugin',HtmlWebpackPlugin)
-
 export default {
 	output: {
-		publicPath: "/dist/"
+		publicPath: "dist/"
 	},
 	mode: "development",
 	module: {
@@ -33,6 +31,10 @@ export default {
 			{
 				test: /\.html?$/,
 				use: "raw-loader"
+			},
+			{
+				test: /\.(png|jpg|gif)$/,
+				loader: "url-loader?limit=8192"
 			}
 		]
 	},

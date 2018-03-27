@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<span class="body">{{body}}</span>
+		<img src="../../img/IMG_4597.jpg" style="width: 100px;">
 	</div>
 </template>
 <script>
