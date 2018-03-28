@@ -8,7 +8,7 @@
 export default {
 	data() {
 		return {
-			body: `This is body66444`
+			body: `This is body66`
 		}
 	}
 }

@@ -1,14 +1,25 @@
 /*
 * @Author: KenyLiangwc
 * @Date:   2018-03-27 15:01:57
-* @Last Modified time: 2018-03-27 18:07:22
+* @Last Modified time: 2018-03-28 16:52:45
 */
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
 
 export default {
+	// optimization: {
+	//    	splitChunks: {
+	//      	chunks: 'all',
+	//      	name: 'common',
+	//    	},
+	//    	runtimeChunk: {
+	//      	name: 'manifest',
+	//    	}
+	// },
 	output: {
-		publicPath: "dist/"
+		publicPath: "dist/",
+		chunkFilename: "c.[name].[chunkhash:4].js",
+		filename: "main.js"
 	},
 	mode: "development",
 	module: {
@@ -22,15 +33,15 @@ export default {
 			},
 			{
 				test: /\.vue$/,
-				use: "vue-loader"
+				loader: "vue-loader"
 			},
 			{
 				test: /\.css$/,
-				use: "style-loader!css-loader"
+				loader: "style-loader!css-loader"
 			},
 			{
 				test: /\.html?$/,
-				use: "raw-loader"
+				loader: "raw-loader"
 			},
 			{
 				test: /\.(png|jpg|gif)$/,
@@ -41,5 +52,11 @@ export default {
 	resolve: {
 		extensions: ['.js','.vue','.json']
 	},
-	devtool: "source-map"
+	devtool: "source-map",
+	// plugins: [
+	// 	new HtmlWebpackPlugin({
+	// 		template: './index.html',
+	// 		filename: 'aaa.html'
+	// 	})
+	// ]
 }
