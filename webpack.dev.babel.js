@@ -1,7 +1,7 @@
 /*
 * @Author: KenyLiangwc
 * @Date:   2018-03-27 15:01:57
-* @Last Modified time: 2018-03-28 16:52:45
+* @Last Modified time: 2018-03-29 16:11:09
 */
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
@@ -17,7 +17,7 @@ export default {
 	//    	}
 	// },
 	output: {
-		publicPath: "dist/",
+		publicPath: "/dist/",
 		chunkFilename: "c.[name].[chunkhash:4].js",
 		filename: "main.js"
 	},
@@ -50,13 +50,15 @@ export default {
 		]
 	},
 	resolve: {
-		extensions: ['.js','.vue','.json']
+		extensions: ['.js','.vue','.json'],
+		alias: {
+			'vue': 'vue/dist/vue.js'
+		}
 	},
-	devtool: "source-map",
-	// plugins: [
-	// 	new HtmlWebpackPlugin({
-	// 		template: './index.html',
-	// 		filename: 'aaa.html'
-	// 	})
-	// ]
+	// devtool: "source-map",
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './index.html'
+		})
+	]
 }
