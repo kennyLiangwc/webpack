@@ -60,9 +60,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
         }
     }
 ```
-    - test用正则匹配需要解析的文件
-    - loader用哪个loader来解析
-    -options loader的选项,解析js时，会到.babelrc中查找插件
+  - test用正则匹配需要解析的文件
+  - loader用哪个loader来解析
+  -options loader的选项,解析js时，会到.babelrc中查找插件
 
 #### resolve（配置模块如何被解析）
  - alias 配置可以使引入变简单
