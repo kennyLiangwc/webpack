@@ -7,15 +7,15 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
 
 export default {
-	// optimization: {
-	//    	splitChunks: {
-	//      	chunks: 'all',
-	//      	name: 'common',
-	//    	},
-	//    	runtimeChunk: {
-	//      	name: 'manifest',
-	//    	}
-	// },
+	optimization: {
+	   	splitChunks: {
+	     	chunks: 'all',
+	     	name: 'common',
+	   	},
+	   	// runtimeChunk: {
+	    //  	name: 'manifest',
+	   	// }
+	},
 	output: {
 		publicPath: "/dist/",
 		chunkFilename: "c.[name].[chunkhash:4].js",

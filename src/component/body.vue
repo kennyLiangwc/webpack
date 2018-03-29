@@ -33,9 +33,10 @@ export default {
 		let getHast = function(url) {
 			url = url || win.location.href;
 			var match = url.match(/#(.*)$/);
-			return match
+			return match ? match[1] : ''
 		}
-		console.log(getHast("http://localhost:8080#/aaa/bbb"))
+		let hash = getHast("http://localhost:8080#view/bbb").slice(1,4);
+		console.log(hash)
 	}
 }
 </script>

@@ -50,6 +50,47 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 #### module(配置如何处理项目中不同的模块)
   -rules 匹配规则的数组
   
-  数组
-      1.
-      2. 
+  数组里为匹配的每一个对象
+```
+    {
+        test: /\.js?$/,
+        loader: "babel-loader",
+        options: {
+            presets: ['env']
+        }
+    }
+```
+    - test用正则匹配需要解析的文件
+    - loader用哪个loader来解析
+    -options loader的选项,解析js时，会到.babelrc中查找插件
+
+#### resolve（配置模块如何被解析）
+ - alias 配置可以使引入变简单
+ ```
+    配置前:
+    import TTT from '../../t/t.js'
+
+    resolve: {
+        alias: {
+            TTT: path.resolve(__dirname,'src/t')
+        }
+    }
+
+    配置后:
+    import TTT from 't/t.js'
+ ```
+ 
+ - extensions 自动解析确定的扩展
+  ```
+    resolve: {
+        extensions: ['.js','.json','.vue'];
+    }
+    引入文件时即可省略js,json,vue等后缀名
+  ```
+
+#### plugins(插件)
+```
+    plugins: [
+        new xxxxx
+    ]
+```
