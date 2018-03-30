@@ -46,6 +46,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
   - pathinfo 告诉 webpack 在 bundle 中引入「所包含模块信息」的相关注释，配置为Boolean值
   - publicPath 此选项指定在浏览器中所引用的「此输出目录对应的公开 URL，webpack-dev-server 也会默认从 publicPath 为基准，使用它来决定在哪个目录下启用服务，来访问 webpack 输出的文件。
   - chunkFilename 非主入口的文件名,设置chunk文件的文件名
+---
 
 #### module(配置如何处理项目中不同的模块)
   -rules 匹配规则的数组
@@ -62,8 +63,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 ```
   - test用正则匹配需要解析的文件
   - loader用哪个loader来解析
+  
+      1)webpack的loader的配置是从右到左
+  
+      2)css-loader {loader: "style-loader!css-loader"} 先使用css-loader之后使用style-loader,同理如需配置less,{loader: "style-loader!less-loader"}
   -options loader的选项,解析js时，会到.babelrc中查找插件
-
+  
+---
 #### resolve（配置模块如何被解析）
  - alias 配置可以使引入变简单
  ```
