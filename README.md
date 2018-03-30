@@ -38,18 +38,18 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 ---
 
 #### entry（一般配置webpack 打包入口，一般只需要配置）
-  - 可配置一个具体的路径，可配置一个数组路径
+- 可配置一个具体的路径，可配置一个数组路径
   
 #### output（webpack出口的配置）
-  - filename 打包后的文件名称
-  - path 打包输入的绝对路径
-  - pathinfo 告诉 webpack 在 bundle 中引入「所包含模块信息」的相关注释，配置为Boolean值
-  - publicPath 此选项指定在浏览器中所引用的「此输出目录对应的公开 URL，webpack-dev-server 也会默认从 publicPath 为基准，使用它来决定在哪个目录下启用服务，来访问 webpack 输出的文件。
-  - chunkFilename 非主入口的文件名,设置chunk文件的文件名
+- filename 打包后的文件名称
+- path 打包输入的绝对路径
+- pathinfo 告诉 webpack 在 bundle 中引入「所包含模块信息」的相关注释，配置为Boolean值
+- publicPath 此选项指定在浏览器中所引用的「此输出目录对应的公开 URL，webpack-dev-server 也会默认从 publicPath 为基准，使用它来决定在哪个目录下启用服务，来访问 webpack 输出的文件。
+- chunkFilename 非主入口的文件名,设置chunk文件的文件名
 ---
 
 #### module(配置如何处理项目中不同的模块)
-  -rules 匹配规则的数组
+- rules 匹配规则的数组
   
   数组里为匹配的每一个对象
 ```
@@ -72,7 +72,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
   
 ---
 #### resolve（配置模块如何被解析）
- - alias 配置可以使引入变简单
+- alias 配置可以使引入变简单
  ```
     配置前:
     import TTT from '../../t/t.js'
