@@ -64,10 +64,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
   - test用正则匹配需要解析的文件
   - loader用哪个loader来解析
   
-      1)webpack的loader的配置是从右到左
+      1) webpack的loader的配置是从右到左
   
-      2)css-loader {loader: "style-loader!css-loader"} 先使用css-loader之后使用style-loader,同理如需配置less,{loader: "style-loader!less-loader"}
-  -options loader的选项,解析js时，会到.babelrc中查找插件
+      2) css-loader {loader: "style-loader!css-loader"} 先使用css-loader之后使用style-loader,同理如需配置less,{loader: "style-loader!less-loader"}
+      
+  - options loader的选项,解析js时，会到.babelrc中查找插件
   
 ---
 #### resolve（配置模块如何被解析）
